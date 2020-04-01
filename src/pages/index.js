@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import fetch from 'node-fetch'
 
 import HomeHead from '../components/HomeHead'
@@ -15,14 +15,28 @@ export const getStaticProps = async () => {
 }
 
 const HomePage = ({ data }) => {
+  const [lagnuage, setLanguage] = useState(LANGUAGES.ENGLISH)
+  useEffect(() => {
+    if (localStorage.getItem('currentLanguage')) {
+      return setLanguage(localStorage.getItem('currentLanguage'))
+    }
+    return ''
+  }, [])
+  useEffect(() => localStorage.setItem('currentLanguage', lagnuage), [lagnuage])
   const languageData = (lang, myArray) => {
     if (lang === LANGUAGES.ENGLISH) return myArray.find((x) => x.id === 1)
     if (lang === LANGUAGES.GERMAN) return myArray.find((x) => x.id === 2)
     return ''
   }
   return (
-    <I18nProvider lang={LANGUAGES.ENGLISH}>
-      <HomeHead data={languageData(LANGUAGES.GERMAN, data)} />
+    <I18nProvider lang={lagnuage}>
+      <HomeHead data={languageData(lagnuage, data)} />
+      <button type="button" onClick={() => setLanguage(LANGUAGES.ENGLISH)}>
+        EN
+      </button>
+      <button type="button" onClick={() => setLanguage(LANGUAGES.GERMAN)}>
+        DE
+      </button>
     </I18nProvider>
   )
 }
