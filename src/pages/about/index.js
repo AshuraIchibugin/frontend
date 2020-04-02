@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import fetch from 'node-fetch'
 
-import HomeHead from '../components/HomeHead'
-import { I18nProvider, LANGUAGES } from '../utils/i18n/index'
+import AboutHead from '../../components/AboutHead'
+import { I18nProvider, LANGUAGES } from '../../utils/i18n/index'
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:1337/homepages')
+  const response = await fetch('http://localhost:1337/aboutuses')
   const data = await response.json()
   return {
     props: {
@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const HomePage = ({ data }) => {
+const About = ({ data }) => {
   const [language, setLanguage] = useState(LANGUAGES.ENGLISH)
   useEffect(() => {
     if (localStorage.getItem('currentLanguage')) {
@@ -30,7 +30,7 @@ const HomePage = ({ data }) => {
   }
   return (
     <I18nProvider lang={language}>
-      <HomeHead data={languageData(language, data)} />
+      <AboutHead data={languageData(language, data)} />
       <button type="button" onClick={() => setLanguage(LANGUAGES.ENGLISH)}>
         EN
       </button>
@@ -41,4 +41,4 @@ const HomePage = ({ data }) => {
   )
 }
 
-export default HomePage
+export default About
