@@ -9,5 +9,6 @@ export default {
     aboutSubTitle: '{value}',
     aboutDescription: '{value}',
     aboutImage: '{value}',
+    text: 'german lang',
   },
 }

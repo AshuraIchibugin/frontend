@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import fetch from 'node-fetch'
 import HomePage from './_HomePage'
 import Layout from '../components/Layout/en'
@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
   }
 }
 
-const Redirect = ({ data }) => {
+const HomePageEn = ({ data }) => {
   return (
     <Layout>
       <HomePage data={data[0]} />
@@ -21,4 +21,4 @@ const Redirect = ({ data }) => {
   )
 }
 
-export default Redirect
+export default HomePageEn

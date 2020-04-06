@@ -4,6 +4,7 @@ import Link from 'next/link'
 import translate from '../../utils/i18n/translate'
 
 const HomeHead = ({ data }) => {
+  console.log(data)
   return (
     <div>
       <div>
@@ -17,7 +18,7 @@ const HomeHead = ({ data }) => {
               <img src={`http://localhost:1337${item.logo.url}`} alt="logo" />
               <div>{item.title}</div>
               <div>{item.description}</div>
-              <Link href={`about/${item.slug}`}>
+              <Link href={`template/${item.slug}`}>
                 <a>{`go to card: ${item.title}`}</a>
               </Link>
             </div>
