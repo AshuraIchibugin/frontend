@@ -1,25 +1,20 @@
 import React from 'react'
 import fetch from 'node-fetch'
-import parser from 'html-react-parser'
+
+import Card from '../../components/Card'
 
 const Cards = ({ post }) => {
-  const data = post[0]
+  const card = post[0]
   return (
-    <section>
-      <div>
-        <h1>{data.title}</h1>
-        <div>{parser(data.description)}</div>
-        <img
-          src={`http://localhost:1337${data.main_image.url}`}
-          alt={data.slug}
-        />
-      </div>
-    </section>
+    <>
+      <Card card={card} />
+    </>
   )
 }
 
 export const getStaticPaths = async () => {
-  const responce = await fetch('http://localhost:1337/cards')
+  const { API_URL } = process.env
+  const responce = await fetch(`${API_URL}/cards`)
   const data = await responce.json()
   const paths = data.map((file) => ({
     params: {
@@ -33,7 +28,8 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params: { card } }) => {
-  const responce = await fetch(`http://localhost:1337/cards?slug=${card}`)
+  const { API_URL } = process.env
+  const responce = await fetch(`${API_URL}/cards?slug=${card}`)
   const post = await responce.json()
   return {
     props: {

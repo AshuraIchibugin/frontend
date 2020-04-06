@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import fetch from 'node-fetch'
 import HomePage from './_HomePage'
 import Layout from '../components/Layout/de'
 
 export const getStaticProps = async () => {
-  const response = await fetch(`http://localhost:1337/homepages?lang=de`)
+  const { API_URL } = process.env
+  const response = await fetch(`${API_URL}/homepages?lang=de`)
   const data = await response.json()
   return {
     props: {

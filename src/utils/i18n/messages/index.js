@@ -1,7 +1,4 @@
-import en from './en'
-import de from './de'
-
-export default {
-  ...en,
-  ...de,
+module.exports = {
+  langs: ['en', 'de', 'ar'],
+  defaultLangKey: 'en',
 }
