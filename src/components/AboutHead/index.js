@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-// import './styles.scss'
 
 import translate from '../../utils/i18n/translate'
 
@@ -19,7 +18,7 @@ const HomeHead = ({ data }) => {
               <img src={`${API_URL}${item.logo.url}`} alt="logo" />
               <div>{item.title}</div>
               <div>{item.description}</div>
-              <Link href={`template/${item.slug}`}>
+              <Link href={`${item.slug}`}>
                 <a>{`go to card: ${item.title}`}</a>
               </Link>
             </div>
