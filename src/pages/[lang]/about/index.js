@@ -1,7 +1,5 @@
 import React from 'react'
 import fetch from 'node-fetch'
-
-import Layout from '../../components/Layout/en'
 import AboutUs from './_AboutUs'
 
 export const getServerSideProps = async () => {
@@ -16,11 +14,7 @@ export const getServerSideProps = async () => {
 }
 
 const AboutEn = ({ data }) => {
-  return (
-    <Layout>
-      <AboutUs data={data[0]} />
-    </Layout>
-  )
+  return <AboutUs data={data[0]} />
 }
 
 export default AboutEn

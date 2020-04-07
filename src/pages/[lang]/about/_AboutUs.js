@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutHead from '../../components/AboutHead'
+import AboutHead from '../../../components/AboutHead'
 
 const About = ({ data }) => {
   return (

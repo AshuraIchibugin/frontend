@@ -1,7 +1,7 @@
 import React from 'react'
 import fetch from 'node-fetch'
 
-import Card from '../components/Card'
+import Card from '../../../components/Card'
 
 const Cards = ({ post }) => {
   const card = post[0]
@@ -23,7 +23,7 @@ export const getStaticPaths = async () => {
   }))
   return {
     paths,
-    fallback: true,
+    fallback: false,
   }
 }
 

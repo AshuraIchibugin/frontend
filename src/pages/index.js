@@ -2,18 +2,19 @@ import React from 'react'
 import fetch from 'node-fetch'
 // import { useRouter } from 'next/router'
 import HomePage from './_HomePage'
-import Layout from '../components/Layout/en'
 
-const Redirect = ({ data }) => (
-  // const location = useRouter().pathname
-  <Layout>
-    <HomePage data={data[0]} />
-  </Layout>
-)
+const Redirect = (props) => {
+  console.log(props)
+  return (
+    <>
+      <HomePage data={props.data[0]} />
+    </>
+  )
+}
 
 export const getStaticProps = async () => {
   const { API_URL } = process.env
-  const response = await fetch(`${API_URL}/homepages?lang=en`)
+  const response = await fetch(`${API_URL}/homepages?lang=de`)
   const data = await response.json()
   return {
     props: {

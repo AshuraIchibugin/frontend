@@ -11,9 +11,16 @@ const HomeHead = ({ data, currentLangKey }) => (
       <div>{translate('homeDescription', { value: data.description })}</div>
       <div>{translate('text')}</div>
     </div>
-    <Link href="/about">
-      <a>got to about page</a>
-    </Link>
+    <div>
+      <Link href="/[lang]/about" as={`/${data.lang}/about`}>
+        <a>got to about page</a>
+      </Link>
+    </div>
+    <div>
+      <Link href="/[lang]" as={`/${data.lang}`}>
+        <a>lang page</a>
+      </Link>
+    </div>
   </div>
 )
 

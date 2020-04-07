@@ -18,7 +18,7 @@ const HomeHead = ({ data }) => {
               <img src={`${API_URL}${item.logo.url}`} alt="logo" />
               <div>{item.title}</div>
               <div>{item.description}</div>
-              <Link href={`${item.slug}`}>
+              <Link href="about/[card]" as={`about/${item.slug}`}>
                 <a>{`go to card: ${item.title}`}</a>
               </Link>
             </div>
