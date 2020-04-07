@@ -8,7 +8,7 @@ const Cards = ({ data, lang }) => {
     <>
       <div>lol</div>
       <Link href="[lang]/about" as={`${lang}/about`}>
-        <a>go to about us page</a>
+        <a>{lang}, go to about us page</a>
       </Link>
     </>
   )
@@ -16,11 +16,11 @@ const Cards = ({ data, lang }) => {
 
 export const getStaticPaths = async () => {
   const { API_URL } = process.env
-  const responce = await fetch(`${API_URL}/aboutuses`)
+  const responce = await fetch(`${API_URL}/languages`)
   const data = await responce.json()
   const paths = data.map((file) => ({
     params: {
-      lang: file.language.lang,
+      lang: file.lang,
     },
   }))
   return {
@@ -31,7 +31,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { lang } }) => {
   const { API_URL } = process.env
-  const responce = await fetch(`${API_URL}/aboutuses?language.lang=${lang}`)
+  const responce = await fetch(`${API_URL}/languages?lang=${lang}`)
   const data = await responce.json()
   return {
     props: {

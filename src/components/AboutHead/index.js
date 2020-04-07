@@ -8,6 +8,7 @@ const HomeHead = ({ data }) => {
   return (
     <div>
       <div>
+        <div>{translate('text')}</div>
         <div>{data.title}</div>
         <div>{data.sub_title}</div>
         <div>{data.description}</div>

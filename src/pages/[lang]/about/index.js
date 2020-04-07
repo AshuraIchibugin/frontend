@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 import AboutUs from './_AboutUs'
 
 const AboutEn = ({ data, lang }) => {
-  console.log(lang)
   return <AboutUs data={data[0]} />
 }
 
