@@ -1,11 +1,13 @@
 import React from 'react'
 import fetch from 'node-fetch'
 import Link from 'next/link'
+import HomePage from './_HomePage'
 
 const Cards = ({ data, lang }) => {
+  console.log(data)
   return (
     <>
-      <div>lol</div>
+      <HomePage data={data[0]} />
       <Link href="[lang]/about" as={`${lang}/about`}>
         <a>{lang}, go to about us page</a>
       </Link>
@@ -15,7 +17,7 @@ const Cards = ({ data, lang }) => {
 
 export const getStaticPaths = async () => {
   const { API_URL } = process.env
-  const responce = await fetch(`${API_URL}/languages`)
+  const responce = await fetch(`${API_URL}/homepages`)
   const data = await responce.json()
   const paths = data.map((file) => ({
     params: {
@@ -30,7 +32,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { lang } }) => {
   const { API_URL } = process.env
-  const responce = await fetch(`${API_URL}/languages?lang=${lang}`)
+  const responce = await fetch(`${API_URL}/homepages?language.lang=${lang}`)
   const data = await responce.json()
   return {
     props: {

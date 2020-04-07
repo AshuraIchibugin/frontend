@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeHead from '../components/HomeHead'
+import HomeHead from '../../components/HomeHead'
 
 const HomePage = ({ data }) => {
   return (
