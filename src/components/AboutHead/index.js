@@ -8,9 +8,9 @@ const HomeHead = ({ data }) => {
   return (
     <div>
       <div>
-        <div>{translate('aboutTitle', { value: data.title })}</div>
-        <div>{translate('aboutSubTitle', { value: data.sub_title })}</div>
-        <div>{translate('aboutDescription', { value: data.description })}</div>
+        <div>{data.title}</div>
+        <div>{data.sub_title}</div>
+        <div>{data.description}</div>
         <img src={`${API_URL}${data.image.url}`} alt="1image" />
         <div>
           {data.ourpurposes.map((item) => (

@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeHead from '../components/HomeHead'
 
-const HomePage = ({ data, currentLangKey }) => {
+const HomePage = ({ data }) => {
   return (
     <>
       <HomeHead data={data} />

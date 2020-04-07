@@ -19,6 +19,7 @@ export const getStaticPaths = async () => {
   const paths = data.map((file) => ({
     params: {
       card: file.slug,
+      lang: 'en',
     },
   }))
   return {

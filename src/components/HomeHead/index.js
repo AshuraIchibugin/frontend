@@ -6,9 +6,9 @@ import translate from '../../utils/i18n/translate'
 const HomeHead = ({ data, currentLangKey }) => (
   <div>
     <div>
-      <div>{translate('homeTitle', { value: data.title })}</div>
-      <div>{translate('homeSubTitle', { value: data.sub_title })}</div>
-      <div>{translate('homeDescription', { value: data.description })}</div>
+      <div>{data.title} </div>
+      <div> {data.sub_title}</div>
+      <div> {data.description}</div>
       <div>{translate('text')}</div>
     </div>
     <div>

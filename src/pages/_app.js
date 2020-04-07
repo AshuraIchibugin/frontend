@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { IntlProvider } from 'react-intl'
 import { getCurrentLangKey } from 'ptz-i18n'
-import languages from '../utils/i18n/messages'
 import { LANGUAGES } from '../utils/i18n/languages'
 import messages from '../utils/i18n/messages'
 
-const Layout = ({ Component, pageProps, lang = LANGUAGES.ENGLISH }) => {
-  useEffect(() => localStorage.setItem('lang', lang), [lang])
+const Layout = ({ Component, pageProps, lang = LANGUAGES.ENGLISH, router }) => {
+  console.log(router)
+  const [language, setLanguage] = useState(lang)
   return (
     <IntlProvider locale={lang} messages={messages[lang]}>
-      <Component {...pageProps} lang={lang} />
+      <Component {...pageProps} />
     </IntlProvider>
   )
 }
