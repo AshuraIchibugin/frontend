@@ -13,7 +13,7 @@ const Redirect = ({ data }) => {
 
 export const getStaticProps = async () => {
   const { API_URL } = process.env
-  const response = await fetch(`${API_URL}/homepages?language.lang=en`)
+  const response = await fetch(`${API_URL}/homepages?language.lang=de`)
   const data = await response.json()
   return {
     props: {

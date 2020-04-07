@@ -1,6 +1,2 @@
-export const LANGUAGES = {
-  ENGLISH: 'en',
-  GERMAN: 'de',
-}
-
-export default LANGUAGES
+export const langs = ['en', 'de']
+export const defaultLang = 'en'

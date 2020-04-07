@@ -3,7 +3,6 @@ import fetch from 'node-fetch'
 import Link from 'next/link'
 
 const Cards = ({ data, lang }) => {
-  console.log(data)
   return (
     <>
       <div>lol</div>

@@ -1,7 +1,5 @@
-import { LANGUAGES } from '../languages'
-
 export default {
-  [LANGUAGES.GERMAN]: {
+  de: {
     text: 'german lang',
   },
 }
