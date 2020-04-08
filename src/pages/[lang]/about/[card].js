@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
   const paths = data.map((file) => ({
     params: {
       card: file.slug,
-      lang: 'en',
+      lang: file.language.lang,
     },
   }))
   return {
@@ -28,9 +28,11 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({ params: { card } }) => {
+export const getStaticProps = async ({ params: { card, lang } }) => {
   const { API_URL } = process.env
-  const responce = await fetch(`${API_URL}/cards?slug=${card}`)
+  const responce = await fetch(
+    `${API_URL}/cards?slug=${card}&language.lang=${lang}`
+  )
   const post = await responce.json()
   return {
     props: {

@@ -1,9 +1,13 @@
 import React from 'react'
 import fetch from 'node-fetch'
-import AboutUs from './_AboutUs'
+import AboutLayouts from '../../../layouts/About'
 
 const AboutEn = ({ data, lang }) => {
-  return <AboutUs data={data[0]} />
+  return (
+    <>
+      <AboutLayouts data={data[0]} lang={lang} />
+    </>
+  )
 }
 
 export const getStaticPaths = async () => {

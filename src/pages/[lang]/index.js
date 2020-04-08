@@ -1,16 +1,11 @@
 import React from 'react'
 import fetch from 'node-fetch'
-import Link from 'next/link'
-import HomePage from './_HomePage'
+import HomeLayouts from '../../layouts/Home'
 
 const Cards = ({ data, lang }) => {
-  console.log(data)
   return (
     <>
-      <HomePage data={data[0]} />
-      <Link href="[lang]/about" as={`${lang}/about`}>
-        <a>{lang}, go to about us page</a>
-      </Link>
+      <HomeLayouts data={data[0]} lang={lang} />
     </>
   )
 }

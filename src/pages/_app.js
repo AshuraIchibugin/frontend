@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { IntlProvider } from 'react-intl'
 import { getCurrentLangKey } from 'ptz-i18n'
+import Router from 'next/router'
 import { langs, defaultLang } from '../utils/i18n/languages'
 import messages from '../utils/i18n/messages'
 
 const Layout = ({ Component, pageProps, router }) => {
   const url = `/${router.query.lang}/`
   const langKey = getCurrentLangKey(langs, defaultLang, url)
+  useEffect(() => {
+    if (router.asPath === '/') {
+      Router.push(`/${langKey}`)
+    }
+  }, [])
   return (
     <IntlProvider locale={langKey} messages={messages[langKey]}>
       <Component {...pageProps} />
