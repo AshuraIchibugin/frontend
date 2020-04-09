@@ -1,10 +1,10 @@
 import React from 'react'
 import AboutHead from '../../components/AboutHead'
 
-const AboutLayouts = ({ data }) => {
+const AboutLayouts = ({ data, lang }) => {
   return (
     <>
-      <AboutHead data={data} />
+      <AboutHead data={data} lang={lang} />
     </>
   )
 }

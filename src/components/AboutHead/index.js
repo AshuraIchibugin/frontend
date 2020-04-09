@@ -3,11 +3,14 @@ import Link from 'next/link'
 
 import translate from '../../utils/i18n/translate'
 
-const HomeHead = ({ data }) => {
+const HomeHead = ({ data, lang }) => {
   const { API_URL } = process.env
   return (
     <div>
       <div>
+        <Link href="/[lang]" as={`/${lang}`}>
+          <a>Go to home {lang} page</a>
+        </Link>
         <div>{translate('text')}</div>
         <div>{data.title}</div>
         <div>{data.sub_title}</div>
