@@ -26,8 +26,7 @@
     "express": "^4.17.1",
     "html-react-parser": "^0.10.3",
     "next": "^9.3.3",
-    "next-images": "^1.4.0",
-    "next-purgecss": "^4.0.0",
+    "next-compose-plugins": "^2.2.0",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.1",
     "ptz-i18n": "^1.0.0",
@@ -36,6 +35,7 @@
     "react-intl": "^4.3.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.3.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
@@ -44,6 +44,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
-    "prettier": "^2.0.2"
+    "prettier": "^2.0.2",
+    "url-loader": "^4.1.0"
   }
 }

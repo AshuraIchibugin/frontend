@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 import translate from '../../utils/i18n/translate'
+import './styles.scss'
 
 const HomeHead = ({ data, lang }) => {
   const { API_URL } = process.env
