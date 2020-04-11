@@ -1,0 +1,176 @@
+@mixin displayFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin phoneFontSize {
+  font-size: $titleFontSizePhone;
+  line-height: $titleFontLinePhone;
+}
+
+@mixin smallTabletFontSize {
+  font-size: $titleFontSizeSmallTablet;
+  line-height: $titleFontLineSmallTablet;
+}
+
+@mixin tabletFontSize {
+  font-size: $titleFontSizeTablet;
+  line-height: $titleFontLineTablet;
+}
+
+@mixin desktopFontSize {
+  font-size: $titleFontSizeDesktop;
+  line-height: $titleFontLineDesktop;
+}
+
+@mixin displayFlexColumn {
+  @include displayFlex;
+  flex-direction: column;
+}
+
+@mixin postionAbsolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin aspectRatio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin phone {
+  @media (min-width: #{$breakpointPhone}) {
+    @content;
+  }
+}
+
+@mixin smallTablet {
+  @media (min-width: #{$breakpointSmallTablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpointTablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpointDesktop}) {
+    @content;
+  }
+}
+
+@mixin bigDesktop {
+  @media (min-width: #{$breakpointBigDesktop}) {
+    @content;
+  }
+}
+
+@mixin biggestDesktop {
+  @media (min-width: #{$breakpointBiggestDesktop}) {
+    @content;
+  }
+}
+@mixin biggerFHDesktop {
+  @media (min-width: #{$breakpointBiggerFHDesktop}) {
+    @content;
+  }
+}
+@mixin biggerQHDesktop {
+  @media (min-width: #{$breakpointBiggerQHDDesktop}) {
+    @content;
+  }
+}
+@mixin smallTabletReverse {
+  @media (min-width: #{$breakpointTablet}) and (max-height: #{$breakpointSmallTablet}) {
+    @content;
+  }
+}
+
+@mixin phoneX {
+  @media (min-width: #{$breakpointSmallTablet}) and (max-height:  #{$breakpointPhone}) {
+    @content;
+  }
+}
+
+@mixin smallPhone {
+  @media (max-width: #{$breakpointPhone}) and (max-height: 320px) {
+    @content;
+  }
+}
+
+@mixin hoverTransition {
+  cursor: pointer;
+  transition: ease-in-out $transitionForHover;
+  background-position: 0%;
+}
+
+@mixin linearGradient($firstColor, $secondColor) {
+  background-image: linear-gradient(
+    to right,
+    $firstColor,
+    $firstColor 50%,
+    $secondColor 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+@mixin linearTextGradient($firstColor, $secondColor) {
+  -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    $firstColor,
+    $firstColor 50%,
+    $secondColor 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
+@mixin hoverTextAnimation($firstColor, $secondColor) {
+  @include linearTextGradient($firstColor, $secondColor);
+  &:hover {
+    color: $firstColor;
+    @include hoverTransition;
+    & svg {
+      transition: ease-in-out $transitionForHover;
+      stroke: $firstColor;
+    }
+  }
+}
+@mixin hoverBackgroundAnimation($firstColor, $secondColor) {
+  @include linearGradient($firstColor, $secondColor);
+  &:hover {
+    color: $secondColor;
+    @include hoverTransition;
+  }
+}
+@mixin hoverSocialAnimation($firstColor, $secondColor) {
+  @include linearTextGradient($firstColor, $secondColor);
+  &:hover {
+    color: $firstColor;
+    @include hoverTransition;
+    & svg {
+      fill: $firstColor;
+    }
+  }
+}

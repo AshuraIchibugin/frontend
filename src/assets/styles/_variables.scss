@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai:400,600,700|Playfair+Display');
+
+$headerHeight: 91px;
+$headerMobileHeight: 50px;
+
+$primaryColor: #113893;
+$whiteColor: #FFFFFF;
+$greyColor: #7F7F7F;
+$yellowColor: #FDCD00;
+$yellowColor2: #FEE67F;
+$yellowColor3: #FFE66C;
+$greenColor: #7DEDD6;
+$blueColor: #82C3ED;
+$lightBlueColor: #73D0F8;
+$lightBlueColor2: #6992E7;
+
+$yellorBgColor: rgba(255, 230, 108, .7);
+$yellorBgColorLessOpacity: rgba(255, 230, 108, .7);
+$blueBgColorOpacity: rgba(39, 189, 255, .7);
+$primaryBgColor: rgba(17, 56, 147, .7);
+$greenBgColor: rgba(179, 222, 215, .7);
+$blueBgColor: rgba(105, 146, 231, .7);
+$lightBlueBgColor: rgba(115, 208, 248, .7);
+
+$borderGray: #707070;
+
+$containerPadding: 12px;
+
+$titleFontSizePhone: 28px;
+$titleFontLinePhone: 34px;
+$titleFontSizeSmallTablet: 38px;
+$titleFontLineSmallTablet: 42px;
+
+$titleFontSizeTablet: 36px;
+$titleFontLineTablet: 50px;
+$titleFontSizeDesktop: 52px;
+$titleFontLineDesktop: 56px;
+
+$fontSizePhone: 16;
+$fontLinePhone: 20px;
+$fontSizeSmallTablet: 18px;
+$fontLineSmallTable: 22px;
+$fontSizeTablet: 22px;
+$fontLineTable: 26px;
+$fontSizeDesktop: 24px;
+$fontLineDesktop: 28px;
+$fontSizeBigDesktop: 26px;
+$fontLineBigDesktop: 30px;
+
+$breakpointPhone: 576px;
+$breakpointSmallTablet: 768px;
+$breakpointTablet: 992px;
+$breakpointDesktop: 1200px;
+$breakpointBigDesktop: 1400px;
+$breakpointBiggestDesktop: 1920px;
+$breakpointBiggerFHDesktop: 1921px;
+$breakpointBiggerQHDDesktop: 2049px;
+
+$transitionForHover: 0.8s
