@@ -10,7 +10,7 @@ const Card = ({ card }) => {
       <div>
         <h1>{card.title}</h1>
         <div>{parser(card.description)}</div>
-        <img src={`${API_URL}${card.main_image.url}`} alt={card.slug} />
+        <img src={`${API_URL}${card.main_image[0].url}`} alt={card.slug} />
       </div>
     </section>
   )

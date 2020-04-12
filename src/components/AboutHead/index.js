@@ -15,11 +15,11 @@ const HomeHead = ({ data, lang }) => {
         <div>{data.title}</div>
         <div>{data.sub_title}</div>
         <div>{data.description}</div>
-        <img src={`${API_URL}${data.image.url}`} alt="1image" />
+        <img src={`${API_URL}${data.image[0].url}`} alt="1image" />
         <div>
           {data.ourpurposes.map((item) => (
             <div key={item.id}>
-              <img src={`${API_URL}${item.logo.url}`} alt="logo" />
+              <img src={`${API_URL}${item.logo[0].url}`} alt="logo" />
               <div>{item.title}</div>
               <div>{item.description}</div>
               <Link href="about/[card]" as={`about/${item.slug}`}>
