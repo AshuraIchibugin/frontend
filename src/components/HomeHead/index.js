@@ -7,7 +7,6 @@ const HomeHead = ({ data, currentLangKey }) => (
   <div>
     <div>
       <div>{data.title} </div>
-      <div> {data.sub_title}</div>
       <div> {data.description}</div>
       <div>{translate('text')}</div>
     </div>

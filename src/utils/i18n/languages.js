@@ -1,2 +1,2 @@
-export const langs = ['en', 'de']
+export const langs = ['en', 'ru']
 export const defaultLang = 'en'
