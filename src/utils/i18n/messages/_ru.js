@@ -1,5 +1,5 @@
 export default {
   ru: {
-    text: 'german lang',
+    text: 'russian lang',
   },
 }

@@ -1,5 +1,5 @@
-import en from './en'
-import ru from './ru'
+import en from './_en'
+import ru from './_ru'
 
 export default {
   ...en,
