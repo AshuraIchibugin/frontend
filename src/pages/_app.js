@@ -9,6 +9,13 @@ import '../assets/styles/main.scss'
 const Layout = ({ Component, pageProps, router }) => {
   const url = `/${router.query.lang}/`
   const langKey = getCurrentLangKey(langs, defaultLang, url)
+
+  useEffect(() => {
+    if (router.asPath === '/') {
+      Router.push(`/${langKey}`)
+    }
+  }, [])
+
   return (
     <IntlProvider locale={langKey} messages={messages[langKey]}>
       <Component {...pageProps} />
