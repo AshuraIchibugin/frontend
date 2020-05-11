@@ -28,6 +28,7 @@ module.exports = {
                   removeViewBox: false,
                 },
                 { cleanupIDs: false },
+                { prefixIds: false },
               ],
             },
           },
