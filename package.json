@@ -26,7 +26,7 @@
     "express": "^4.17.1",
     "html-react-parser": "^0.10.3",
     "next": "^9.3.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.13.1",
     "ptz-i18n": "^1.0.0",
     "react": "^16.13.1",
